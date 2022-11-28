@@ -1,0 +1,17 @@
+.video-react {
+    position: "initial !important"
+
+}
+
+.video-react .video-react-big-play-button {
+    z-index: 100;
+    background-color: #0f79af !important;
+    padding: 0 !important;
+    top: 230px !important;
+    border: none !important;
+
+}
+
+.helo {
+    padding-top: 40px;
+}

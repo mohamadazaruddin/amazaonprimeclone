@@ -4,6 +4,7 @@ import { SWRConfig } from "swr"
 import theme from "../styles/theme"
 import router from "next/router"
 import React from "react"
+import "../styles/global.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   const fetcher = async (url: string) => {

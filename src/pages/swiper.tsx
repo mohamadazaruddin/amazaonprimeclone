@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
-import { Box, Button, Image, Text } from "@chakra-ui/react"
+import { Box, Button, Heading, Image, Text } from "@chakra-ui/react"
 import Navbar from "../components/Navbar"
 import { useSwiper } from "swiper/react"
 import "swiper/css/bundle"
@@ -26,7 +26,7 @@ export default function swiper() {
       setHeroslider(heroData)
     }
   }
-  console.log(moviesData, "data")
+  // console.log(moviesData, "data")
   const swiper = useSwiper()
   return (
     <>
@@ -69,6 +69,8 @@ export default function swiper() {
               spaceBetween={10}
               slidesPerView={6}
               zoom={true}
+              navigation
+              modules={[Navigation]}
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
@@ -87,20 +89,27 @@ export default function swiper() {
                     ></Box>
                     <Box
                       // bgGradient="linear(#1b252e 0%, #1b252e 38%, #1b252e 73%)"'
-                      h="0"
+                      h="150px"
                       overflow="hidden"
                       bgColor="#1b252e"
-                      _groupHover={{
-                        h: "150px",
-                      }}
+                      // _groupHover={{
+                      //   h: "150px",
+                      // }}
                     >
                       <Box p="10px">
-                        <Text m="0" color="#fff">
-                          {/* {video.title} */}
-                        </Text>{" "}
-                        <Text m="0" color="#fff">
-                          {/* {video.description} */}
-                        </Text>
+                        <Heading m="0" color="#fff" fontSize="18px">
+                          {video.title}
+                        </Heading>{" "}
+                        <Box
+                          h="auto"
+                          textOverflow="ellipsis"
+                          whiteSpace="break-spaces"
+                          overflow="hidden"
+                        >
+                          <Text mt="10px" color="#fff" fontSize="12px">
+                            {video.description}
+                          </Text>
+                        </Box>
                       </Box>
                     </Box>
                   </Box>
